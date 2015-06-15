@@ -16,7 +16,7 @@ def read_words(file_name, delimiter=''):
             for word in line.split(delimiter):
                 yield word
 
-class Fib(max):
+class Fib():
     '''Fibonacci sequence iterator, goes until (but not including) max'''
 
     def __init__(self, max):
