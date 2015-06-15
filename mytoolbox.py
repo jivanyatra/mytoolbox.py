@@ -27,9 +27,19 @@ class Fib():
         self.b = 1
         return self
 
-    def next(self):
+    def __next__(self):
         fib = self.a
         if fib > self.max:
             raise StopIteration
         self.a, self.b = self.b, self.a + self.b
         return fib
+
+def fibgen(max=None):
+    """Fibonacci numbers generator"""
+    """If no value is used in calling, will return infinitely"""
+    a, b, i = 0, 1, 0
+    while True:
+        if max and (i > max): return
+        yield a
+        a, b = b, a + b
+        i += 1
